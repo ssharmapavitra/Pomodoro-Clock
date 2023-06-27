@@ -61,8 +61,10 @@ function runSessionTimer() {
 				if (session) {
 					sessionNumber++;
 					sessionHead.innerHTML = `BREAK !!`;
+					sessionHead.style.color = `var(--headColor)`;
 				} else {
 					sessionHead.innerHTML = `SESSION ${sessionNumber}`;
+					sessionHead.style.color = `var(--buttonColor)`;
 				}
 				session = !session;
 				timer = session ? sesTime : breTime;

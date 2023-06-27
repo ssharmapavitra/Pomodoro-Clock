@@ -23,12 +23,13 @@
 .clockPad {
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	height: 80%;
+	width: 352px;
+	height: 720px;
 	background-color: var(--padColor);
 	border-radius: 10px;
 	padding-top: 20px;
 	align-items: center;
+	margin: 1rem;
 	/* border: 2px solid pink; */
 }
 
@@ -68,12 +69,12 @@
 	align-items: center;
 	/* border: 2px solid red; */
 	padding: 0.5rem;
-	border-bottom: 2px dotted black;
+	border-bottom: 2px dotted var(--clockBoxColor);
 }
 .sessionHead h3 {
 	font-size: 1.5rem;
 	font-weight: 600;
-	color: var(--headColor);
+	color: var(--buttonColor);
 }
 
 /* Functions */
@@ -83,8 +84,8 @@
 	align-items: center;
 	width: 100%;
 	/* border: 2px solid red; */
-	padding: 2rem;
-	border-bottom: 2px dotted black;
+	padding: 1rem;
+	border-bottom: 2px dotted var(--clockBoxColor);
 }
 
 .sessionTime {
@@ -95,6 +96,14 @@
 	/* border: 2px solid green; */
 	padding: 1rem;
 }
+.sessionTime h3 {
+	/* border: 2px solid green; */
+	margin-bottom: 0.5rem;
+	color: var(--buttonColor);
+}
+.sesText {
+	margin-bottom: 0.5rem;
+}
 .breakTime {
 	display: flex;
 	justify-content: center;
@@ -102,6 +111,14 @@
 	flex-direction: column;
 	/* border: 2px solid yellow; */
 	padding: 1rem;
+}
+.breakTime h3 {
+	/* border: 2px solid yellow; */
+	margin-bottom: 0.5rem;
+	color: var(--headColor);
+}
+.brekText {
+	margin-bottom: 0.5rem;
 }
 
 /* Controls */
@@ -127,4 +144,11 @@
 .ctr {
 	padding: 0.5rem;
 	color: var(--bgColor);
+}
+
+@media (max-width: 300px) {
+	.container {
+		height: 100%;
+		/* background-color: #e55807; */
+	}
 }
