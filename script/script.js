@@ -116,6 +116,7 @@ start.addEventListener("click", () => {
 //pause timer
 pause.addEventListener("click", () => {
 	pauseTimer = true;
+	start.disabled = false;
 });
 
 //reset timer
@@ -129,6 +130,7 @@ function disable() {
 	for (var i = 0; i < nodes.length; i++) {
 		nodes[i].disabled = true;
 	}
+	start.disabled = true;
 }
 
 //enable divs
@@ -137,6 +139,7 @@ function enable() {
 	for (var i = 0; i < nodes.length; i++) {
 		nodes[i].disabled = false;
 	}
+	start.disabled = false;
 }
 
 //start
