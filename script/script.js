@@ -9,13 +9,16 @@ const breAdd = document.getElementById("breAdd");
 const sesText = document.querySelector(".sesText");
 const brekText = document.querySelector(".brekText");
 const sessionValues = document.getElementById("sessionValues");
+const clockBorder = document.getElementById("clockBorder");
+const sessionHead = document.getElementById("sessionHead");
 
 //Variables
 let sesionTime = 0.5;
-let breakTime = 1;
+let breakTime = 0.25;
 let clearTimer = false;
 let pauseTimer = true;
 let timerRunning = false;
+let sessionNumber = 1;
 
 //Load function
 function load() {
@@ -55,35 +58,50 @@ function runSessionTimer() {
 			sec = sec < 10 ? "0" + sec : sec;
 			time.innerHTML = `${min}:${sec}`;
 			if (timer == 0) {
+				if (session) {
+					sessionNumber++;
+					sessionHead.innerHTML = `BREAK !!`;
+				} else {
+					sessionHead.innerHTML = `SESSION ${sessionNumber}`;
+				}
 				session = !session;
 				timer = session ? sesTime : breTime;
+			}
+
+			//animation for clock using border fill and rotate
+			if (session) {
+				let deg = (timer / sesTime) * 360;
+				clockBorder.style.background = `conic-gradient(#116a7b ${deg}deg, #e55807 0deg)`;
+			} else {
+				let deg = (timer / breTime) * 360;
+				clockBorder.style.background = `conic-gradient(#e55807 ${deg}deg, #116a7b 0deg)`;
 			}
 		}
 	}, 1000);
 }
 
-//Session to break
-
-//Break to Session
-
 //Function to add and sub session time
 sesAdd.addEventListener("click", () => {
-	sesionTime += 10;
+	// sesionTime += 10;
+	sesionTime += 1;
 	sesText.innerHTML = `${sesionTime}min`;
 });
 sesSub.addEventListener("click", () => {
-	sesionTime -= 10;
+	// sesionTime -= 10;
+	sesionTime -= 1;
 	sesionTime = sesionTime < 0 ? 0 : sesionTime;
 	sesText.innerHTML = `${sesionTime}min`;
 });
 
 //Function to add and sub break time
 breAdd.addEventListener("click", () => {
-	breakTime += 5;
+	// breakTime += 5;
+	breakTime += 0.5;
 	brekText.innerHTML = `${breakTime}min`;
 });
 breSub.addEventListener("click", () => {
-	breakTime -= 5;
+	// breakTime -= 5;
+	breakTime -= 0.5;
 	breakTime = breakTime < 0 ? 0 : breakTime;
 	brekText.innerHTML = `${breakTime}min`;
 });
@@ -129,8 +147,10 @@ function startFun() {
 
 //reset
 function resetFun() {
+	sessionNumber = 1;
+	clockBorder.style.background = "none";
 	timerRunning = false;
 	enable();
 	clearTimer = true;
-	time.innerText = "00:00:00";
+	time.innerText = "00:00";
 }

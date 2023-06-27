@@ -1,3 +1,12 @@
+:root {
+	--bgColor: #c2dedc;
+	--padColor: #ece5c7;
+	--headColor: #e55807;
+	--buttonColor: #116a7b;
+	--clockBoxColor: #cdc2ae;
+	--colorC6: #f2e8dc;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -9,42 +18,62 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-color: #ffeba4;
+	background-color: var(--bgColor);
 }
 .clockPad {
 	display: flex;
 	flex-direction: column;
-	width: 60%;
+	width: 50%;
 	height: 80%;
-	background-color: #9c9372;
+	background-color: var(--padColor);
+	border-radius: 10px;
 	padding-top: 20px;
 	align-items: center;
+	/* border: 2px solid pink; */
 }
 
 /* Clock  */
 .clockBox {
-	background-color: aliceblue;
-	width: 50%;
-	height: 50%;
+	background-color: var(--clockBoxColor);
+	width: 80%;
+	height: 60%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 1rem;
 }
+.clockBorder {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.clock {
+	background-color: var(--clockBoxColor);
+	width: 100%;
+	height: 85%;
+	margin: 2rem 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border: 1px solid red; */
+}
 
 /* Session Head  */
 .sessionHead {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	border: 2px solid red;
-	padding: 2rem;
+	/* border: 2px solid red; */
+	padding: 0.5rem;
+	border-bottom: 2px dotted black;
 }
 .sessionHead h3 {
 	font-size: 1.5rem;
 	font-weight: 600;
-	color: aliceblue;
+	color: var(--headColor);
 }
 
 /* Functions */
@@ -53,8 +82,9 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	border: 2px solid red;
+	/* border: 2px solid red; */
 	padding: 2rem;
+	border-bottom: 2px dotted black;
 }
 
 .sessionTime {
@@ -62,7 +92,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	border: 2px solid green;
+	/* border: 2px solid green; */
 	padding: 1rem;
 }
 .breakTime {
@@ -70,7 +100,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	border: 2px solid yellow;
+	/* border: 2px solid yellow; */
 	padding: 1rem;
 }
 
@@ -80,7 +110,7 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	border: 2px solid greenyellow;
+	/* border: 2px solid greenyellow; */
 	padding: 2rem;
 }
 .btn {
@@ -89,8 +119,12 @@
 	border: none;
 	outline: none;
 	cursor: pointer;
-	background-color: #363223;
-	color: #9c9372;
+	background-color: var(--buttonColor);
+	color: var(--bgColor);
 	font-size: 1rem;
 	font-weight: 600;
+}
+.ctr {
+	padding: 0.5rem;
+	color: var(--bgColor);
 }
