@@ -1,0 +1,96 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #ffeba4;
+}
+.clockPad {
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	height: 80%;
+	background-color: #9c9372;
+	padding-top: 20px;
+	align-items: center;
+}
+
+/* Clock  */
+.clockBox {
+	background-color: aliceblue;
+	width: 50%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem;
+}
+
+/* Session Head  */
+.sessionHead {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	border: 2px solid red;
+	padding: 2rem;
+}
+.sessionHead h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: aliceblue;
+}
+
+/* Functions */
+.sessionValues {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	border: 2px solid red;
+	padding: 2rem;
+}
+
+.sessionTime {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: 2px solid green;
+	padding: 1rem;
+}
+.breakTime {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: 2px solid yellow;
+	padding: 1rem;
+}
+
+/* Controls */
+.sessionControl {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	border: 2px solid greenyellow;
+	padding: 2rem;
+}
+.btn {
+	padding: 1rem;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: #363223;
+	color: #9c9372;
+	font-size: 1rem;
+	font-weight: 600;
+}
